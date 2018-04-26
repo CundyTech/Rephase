@@ -1,0 +1,76 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Helpers\SharedPreferencesHelper.cs" />
+    <Compile Remove="MainPage.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="MainPage.xaml" />
+    <EmbeddedResource Remove="Page.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PCLStorage" Version="1.0.2" />
+    <PackageReference Include="SlideOverKit" Version="2.1.6" />
+    <PackageReference Include="WindowsAzure.Storage" Version="9.1.0" />
+    <PackageReference Include="Xam.Plugins.TextToSpeech" Version="3.3.2" />
+    <PackageReference Include="Xamarin.Forms" Version="2.5.1.444934" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="App.xaml.cs">
+      <DependentUpon>*.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="SplashScreenPage.xaml.cs">
+      <DependentUpon>SplashScreenPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="SettingsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="SplashScreenPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="StandardContentPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="TextToSpeechSettings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PropertyPageSchema Remove="Page.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="Page.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PropertyPageSchema Remove="Page.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PropertyPageSchema Remove="Page.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PropertyPageSchema Remove="Page.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v8.1\Mono.Android.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

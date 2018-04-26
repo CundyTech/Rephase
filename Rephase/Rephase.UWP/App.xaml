@@ -1,0 +1,8 @@
+﻿<Application
+    x:Class="Rephase.UWP.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Rephase.UWP"
+    RequestedTheme="Light">
+
+</Application>
