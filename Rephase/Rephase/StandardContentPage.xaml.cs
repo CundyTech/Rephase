@@ -28,11 +28,14 @@ namespace Rephase
 
             TextToSpeechHelper = textToSpeechHelper ?? throw new ArgumentNullException("TextToSpeechHelper");
             MenuItemHelper = menuItemHelper ?? throw new ArgumentNullException("MenuItemHelper");
-                  
-            StandardContentPageModel = new StandardContentPageModel();        
-            StandardContentPageModel.Children = children;
-            StandardContentPageModel.Icon = children[0].LocalImagePath;
-            StandardContentPageModel.Title = title ?? MainMenuTitle;
+
+            StandardContentPageModel = new StandardContentPageModel
+            {
+                Children = children,
+                Icon = children[0].LocalImagePath,
+                Title = title ?? MainMenuTitle
+            };
+
             NavigationPage.SetTitleIcon(this, StandardContentPageModel.Icon);
 
             BindingContext = StandardContentPageModel;
